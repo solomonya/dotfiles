@@ -45,3 +45,5 @@ map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
 -- :BarbarEnable - enables barbar (enabled by default)
 -- :BarbarDisable - very bad command, should never be used
 
+vim.keymap.set('n', '<C-S-[>', 'za', { noremap = true, silent = true })
+

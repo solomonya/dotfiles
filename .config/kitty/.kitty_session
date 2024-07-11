@@ -1,0 +1,32 @@
+new_tab home
+layout tall
+launch zsh
+
+new_tab cred-admin
+layout tall
+launch zsh
+cd ~/projects/globerce/ff-mortgage-credit-admin
+launch zsh
+launch zsh
+
+
+new_tab core-cabinet
+layout tall
+launch zsh
+cd ~/projects/globerce/super_cabinet_front
+launch zsh
+launch zsh
+
+new_tab personal-cabinet
+layout tall
+launch zsh
+cd ~/projects/globerce/ffin_personal_cabinet
+launch zsh
+launch zsh
+
+new_tab cff-telemarketing
+layout tall
+launch zsh
+cd ~/projects/globerce/ff-telemarketing
+launch zsh
+launch zsh
