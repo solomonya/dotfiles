@@ -69,11 +69,6 @@ return {
 			capabilities = capabilities,
 		})
 
-		-- configure pyright server
-		lspconfig["pyright"].setup({
-			capabilites = capabilities,
-		})
-
 		-- configure lua server (with special settings)
 		lspconfig["lua_ls"].setup({
 			capabilities = capabilities,
