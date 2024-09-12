@@ -5,7 +5,7 @@ vim.opt.expandtab = true
 vim.bo.softtabstop = 2
 
 vim.cmd("set number")
--- vim.cmd('highlight ColorColumn ctermbg=DarkGray')
+vim.cmd('highlight ColorColumn ctermbg=DarkGray')
 -- vim.cmd('set colorcolumn=80')
 
 -- folding

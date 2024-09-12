@@ -49,23 +49,12 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
-		-- configure html server
-		lspconfig["html"].setup({
-			capabilities = capabilities,
-		})
-
 		-- configure typescript server with plugin
 		lspconfig["tsserver"].setup({
 			capabilities = capabilities,
 		})
 
-		-- configure css server
-		lspconfig["cssls"].setup({
-			capabilities = capabilities,
-		})
-
-		-- configure tailwindcss server
-		lspconfig["tailwindcss"].setup({
+		lspconfig["pylyzer"].setup({
 			capabilities = capabilities,
 		})
 
