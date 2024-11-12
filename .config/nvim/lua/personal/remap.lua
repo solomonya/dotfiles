@@ -11,10 +11,10 @@ map("n", "vv", "<C-w>v", opts)
 map("n", "hh", "<C-w><C-n>", opts)
 
 -- splits movements
-map("n", "<C-J>", "<C-W><C-J>", opts)
-map("n", "<C-K>", "<C-W><C-K>", opts)
-map("n", "<C-L>", "<C-W><C-L>", opts)
-map("n", "<C-H>", "<C-W><C-H>", opts)
+-- map("n", "<C-J>", "<C-W><C-J>", opts)
+-- map("n", "<C-K>", "<C-W><C-K>", opts)
+-- map("n", "<C-L>", "<C-W><C-L>", opts)
+-- map("n", "<C-H>", "<C-W><C-H>", opts)
 
 -- Disable arrow keys in normal mode
 map("n", "<Up>", "<NOP>", opts)
