@@ -4,46 +4,32 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
--- Move to previous/next
-map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
-map('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
--- Re-order to previous/next
-map('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts)
-map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)
--- Goto buffer in position...
-map('n', '<A-1>', '<Cmd>BufferGoto 1<CR>', opts)
-map('n', '<A-2>', '<Cmd>BufferGoto 2<CR>', opts)
-map('n', '<A-3>', '<Cmd>BufferGoto 3<CR>', opts)
-map('n', '<A-4>', '<Cmd>BufferGoto 4<CR>', opts)
-map('n', '<A-5>', '<Cmd>BufferGoto 5<CR>', opts)
-map('n', '<A-6>', '<Cmd>BufferGoto 6<CR>', opts)
-map('n', '<A-7>', '<Cmd>BufferGoto 7<CR>', opts)
-map('n', '<A-8>', '<Cmd>BufferGoto 8<CR>', opts)
-map('n', '<A-9>', '<Cmd>BufferGoto 9<CR>', opts)
-map('n', '<A-0>', '<Cmd>BufferLast<CR>', opts)
--- Pin/unpin buffer
-map('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
--- Close buffer
-map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
--- Wipeout buffer
---                 :BufferWipeout
--- Close commands
---                 :BufferCloseAllButCurrent
---                 :BufferCloseAllButPinned
---                 :BufferCloseAllButCurrentOrPinned
---                 :BufferCloseBuffersLeft
---                 :BufferCloseBuffersRight
--- Magic buffer-picking mode
-map('n', '<C-p>', '<Cmd>BufferPick<CR>', opts)
--- Sort automatically by...
-map('n', '<Space>bb', '<Cmd>BufferOrderByBufferNumber<CR>', opts)
-map('n', '<Space>bd', '<Cmd>BufferOrderByDirectory<CR>', opts)
-map('n', '<Space>bl', '<Cmd>BufferOrderByLanguage<CR>', opts)
-map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
+-- folding like in vscode
+map("n", "<C-S-[>", "za", opts)
+-- vertical split
+map("n", "vv", "<C-w>v", opts)
+map("n", "hh", "<C-w><C-n>", opts)
 
--- Other:
--- :BarbarEnable - enables barbar (enabled by default)
--- :BarbarDisable - very bad command, should never be used
+-- splits movements
+map("n", "<C-J>", "<C-W><C-J>", opts)
+map("n", "<C-K>", "<C-W><C-K>", opts)
+map("n", "<C-L>", "<C-W><C-L>", opts)
+map("n", "<C-H>", "<C-W><C-H>", opts)
 
-vim.keymap.set('n', '<C-S-[>', 'za', { noremap = true, silent = true })
+-- Disable arrow keys in normal mode
+map("n", "<Up>", "<NOP>", opts)
+map("n", "<Down>", "<NOP>", opts)
+map("n", "<Left>", "<NOP>", opts)
+map("n", "<Right>", "<NOP>", opts)
 
+-- Disable arrow keys in insert mode
+map("i", "<Up>", "<NOP>", opts)
+map("i", "<Down>", "<NOP>", opts)
+map("i", "<Left>", "<NOP>", opts)
+map("i", "<Right>", "<NOP>", opts)
+
+-- Disable arrow keys in visual mode
+map("v", "<Up>", "<NOP>", opts)
+map("v", "<Down>", "<NOP>", opts)
+map("v", "<Left>", "<NOP>", opts)
+map("v", "<Right>", "<NOP>", opts)

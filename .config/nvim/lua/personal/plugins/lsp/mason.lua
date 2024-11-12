@@ -17,9 +17,9 @@ return {
 		mason.setup({
 			ui = {
 				icons = {
-					package_installed = "✓",
-					package_pending = "➜",
-					package_uninstalled = "✗",
+					package_installed = "I",
+					package_pending = "P",
+					package_uninstalled = "X",
 				},
 			},
 		})
@@ -27,10 +27,6 @@ return {
 		mason_lspconfig.setup({
 			-- list of servers for mason to install
 			ensure_installed = {
-				"tsserver",
-				"html",
-				"cssls",
-				"tailwindcss",
 				"lua_ls",
 			},
 			-- auto-install configured servers (with lspconfig)

@@ -20,3 +20,4 @@ require("lazy").setup({
   enabled = true,
   notify = false
 })
+
