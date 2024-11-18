@@ -23,3 +23,8 @@ vim.opt.foldnestmax = 4
 
 vim.diagnostic.config({ virtual_text = false })
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
+
+-- neovide settings
+if vim.g.neovide then
+    vim.o.guifont = "Iosevka Term:h13"
+end
