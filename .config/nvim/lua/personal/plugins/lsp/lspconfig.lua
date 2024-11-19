@@ -49,7 +49,7 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
-		lspconfig["pylyzer"].setup({
+		lspconfig["pylsp"].setup({
 			capabilities = capabilities,
 		})
 
