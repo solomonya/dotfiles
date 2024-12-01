@@ -7,9 +7,9 @@ local opts = { noremap = true, silent = true }
 -- folding like in vscode
 map("n", "<C-S-[>", "za", opts)
 -- vertical split
-map("n", "<C-a>v", "<C-w>v", opts)
-map("n", "<C-a>h", "<C-w><C-n>", opts)
-map("n", "<C-a>x", "<C-w>q", opts)
+map("n", "<C-w>v", "<C-w>v", opts)
+map("n", "<C-w>h", "<C-w><C-n>", opts)
+map("n", "<C-w>x", "<C-w>q", opts)
 
 -- Disable arrow keys in normal mode
 map("n", "<Up>", "<NOP>", opts)

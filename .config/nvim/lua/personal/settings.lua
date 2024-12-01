@@ -4,11 +4,12 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.bo.softtabstop = 4
 
+vim.cmd("set nocompatible")
 vim.cmd("set number")
 vim.cmd("colorscheme habamax")
 vim.cmd("let g:sneak#label = 1")
-vim.cmd("highlight Normal guibg=black guifg=DarkGray")
-vim.cmd("set background=dark")
+-- vim.cmd("highlight Normal guibg=black guifg=DarkGray")
+-- vim.cmd("set background=dark")
 -- vim.cmd('highlight ColorColumn ctermbg=DarkGray')
 -- vim.cmd('set colorcolumn=80')
 
@@ -24,7 +25,3 @@ vim.opt.foldnestmax = 4
 vim.diagnostic.config({ virtual_text = false })
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
--- neovide settings
-if vim.g.neovide then
-    vim.o.guifont = "Iosevka Term:h13"
-end
