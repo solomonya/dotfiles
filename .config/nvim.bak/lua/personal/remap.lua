@@ -1,8 +1,10 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
+
+-- oil nvim
+map("n", "<leader>pv", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- folding like in vscode
 map("n", "<C-S-[>", "za", opts)
