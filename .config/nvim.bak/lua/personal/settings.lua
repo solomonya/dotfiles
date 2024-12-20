@@ -1,15 +1,29 @@
 vim.wo.relativenumber = true
+vim.g.netrw_banner = 0
+vim.g.netrw_liststyle = 3
+
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.bo.softtabstop = 4
+vim.opt.syntax = "ON"
+vim.opt.backup = false
+vim.opt.compatible = false
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+vim.opt.wrap = false
+vim.opt.splitright = true
 
-vim.cmd("set nocompatible")
+vim.cmd("set path+=**")
 vim.cmd("set number")
 vim.cmd("colorscheme habamax")
 vim.cmd("let g:sneak#label = 1")
 vim.cmd("highlight Normal ctermbg=Black")
 vim.cmd("set background=dark")
+vim.cmd("filetype plugin on")
+vim.cmd("set wildmenu")
 -- vim.cmd('highlight ColorColumn ctermbg=DarkGray')
 -- vim.cmd('set colorcolumn=80')
 
@@ -24,4 +38,3 @@ vim.opt.foldnestmax = 4
 
 vim.diagnostic.config({ virtual_text = false })
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
-

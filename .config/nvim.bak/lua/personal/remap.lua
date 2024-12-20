@@ -1,10 +1,19 @@
 vim.g.mapleader = " "
 
-local map = vim.api.nvim_set_keymap
+function map(mode, lhs, rhs, opts)
+	local options = { noremap = true }
+	if opts then
+		options = vim.tbl_extend("force", options, opts)
+	end
+	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+end
+
 local opts = { noremap = true, silent = true }
 
--- oil nvim
-map("n", "<leader>pv", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+-- netrw
+map("n", "<leader>e", ":20Lex<CR>")
+
+map("n", "<leader>d", ":bd! <CR>") -- delete current buffer
 
 -- folding like in vscode
 map("n", "<C-S-[>", "za", opts)
@@ -30,3 +39,11 @@ map("v", "<Up>", "<NOP>", opts)
 map("v", "<Down>", "<NOP>", opts)
 map("v", "<Left>", "<NOP>", opts)
 map("v", "<Right>", "<NOP>", opts)
+
+-- autclose brackets
+map("i", "'", "''<left>")
+map("i", '"', '""<left>')
+map("i", "(", "()<left>")
+map("i", "[", "[]<left>")
+map("i", "{", "{}<left>")
+map("i", "/*", "/**/<left><left>")
