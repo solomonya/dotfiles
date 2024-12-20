@@ -10,10 +10,16 @@ end
 
 local opts = { noremap = true, silent = true }
 
+-- tabs
+map("n", "<leader>tn", ":tabnew<CR>")
+map("n", "<leader>tx", ":tabclose<CR>")
+map("n", "<leader>tj", ":tabnext<CR>")
+map("n", "<leader>tk", ":tabprevious<CR>")
+
 -- netrw
 map("n", "<leader>e", ":20Lex<CR>")
 
-map("n", "<leader>d", ":bd! <CR>") -- delete current buffer
+map("n", "<leader>d", ":bdelete") -- delete current buffer
 
 -- folding like in vscode
 map("n", "<C-S-[>", "za", opts)
