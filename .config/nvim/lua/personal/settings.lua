@@ -1,6 +1,5 @@
 vim.wo.relativenumber = true
 vim.g.netrw_banner = 0
-vim.g.netrw_liststyle = 3
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
@@ -16,14 +15,12 @@ vim.opt.incsearch = true
 vim.opt.wrap = false
 vim.opt.splitright = true
 
-vim.cmd("set path+=**")
 vim.cmd("set number")
 vim.cmd("colorscheme habamax")
 vim.cmd("let g:sneak#label = 1")
 vim.cmd("highlight Normal ctermbg=Black")
 vim.cmd("set background=dark")
 vim.cmd("filetype plugin on")
-vim.cmd("set wildmenu")
 -- vim.cmd('highlight ColorColumn ctermbg=DarkGray')
 -- vim.cmd('set colorcolumn=80')
 
