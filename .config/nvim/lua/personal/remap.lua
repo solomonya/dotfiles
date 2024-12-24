@@ -17,7 +17,7 @@ map("n", "<leader>tj", ":tabnext<CR>")
 map("n", "<leader>tk", ":tabprevious<CR>")
 
 -- netrw
-map("n", "<leader>e", ":20Lex<CR>")
+map("n", "<leader>e", ":Lexplore %:p:h<CR>")
 
 map("n", "<leader>d", ":bdelete") -- delete current buffer
 
