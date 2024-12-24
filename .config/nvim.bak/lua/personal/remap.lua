@@ -46,10 +46,3 @@ map("v", "<Down>", "<NOP>", opts)
 map("v", "<Left>", "<NOP>", opts)
 map("v", "<Right>", "<NOP>", opts)
 
--- autclose brackets
-map("i", "'", "''<left>")
-map("i", '"', '""<left>')
-map("i", "(", "()<left>")
-map("i", "[", "[]<left>")
-map("i", "{", "{}<left>")
-map("i", "/*", "/**/<left><left>")
