@@ -10,6 +10,7 @@ return {
 				"lua",
 				"vim",
 				"vimdoc",
+				"javascript",
 			},
 			sync_install = false,
 			highlight = { enable = false },

@@ -1,0 +1,30 @@
+# Colors (Alabaster Dark)
+# author tonsky
+
+[colors.primary]
+background = '#000000'
+foreground = '#CECECE'
+
+[colors.cursor]
+text = '#0E1415'
+cursor = '#CECECE'
+
+[colors.normal]
+black = '#000000'
+red = '#CECECE'
+green = '#CECECE'
+yellow = '#CECECE'
+blue = '#CECECE'
+magenta = '#CECECE'
+cyan = '#CECECE'
+white = '#CECECE'
+
+[colors.bright]
+black = '#000000'
+red = '#CECECE'
+green = '#CECECE'
+yellow = '#CECECE'
+blue = '#CECECE'
+magenta = '#CECECE'
+cyan = '#CECECE'
+white = '#CECECE'

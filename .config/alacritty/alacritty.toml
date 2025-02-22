@@ -1,0 +1,10 @@
+[general]
+import = ["~/.config/alacritty/alabaster_dark.toml"]
+
+[font]
+normal = { family = "Iosevka Term", style = "Regular" }
+bold = { family = "Iosevka Term", style = "Regular" }
+size = 13
+
+[cursor]
+style = { shape = "Beam" }
