@@ -4,7 +4,7 @@ import = ["~/.config/alacritty/alabaster_dark.toml"]
 [font]
 normal = { family = "Iosevka Term", style = "Regular" }
 bold = { family = "Iosevka Term", style = "Regular" }
-size = 13
+size = 14
 
 [cursor]
 style = { shape = "Block" }
