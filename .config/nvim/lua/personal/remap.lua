@@ -17,7 +17,7 @@ map("n", "<leader>tj", ":tabnext<CR>")
 map("n", "<leader>tk", ":tabprevious<CR>")
 
 -- netrw
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+map("n", "<leader>e", ":Explore %:p:h<CR>")
 
 map("n", "<leader>d", ":bdelete") -- delete current buffer
 
