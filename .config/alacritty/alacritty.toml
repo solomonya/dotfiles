@@ -7,4 +7,4 @@ bold = { family = "Iosevka Term", style = "Regular" }
 size = 13
 
 [cursor]
-style = { shape = "Beam" }
+style = { shape = "Block" }
