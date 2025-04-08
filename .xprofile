@@ -1,3 +1,4 @@
 setxkbmap -model pc105 -layout us,ru -option grp:toggle
-xfsettingsd &
+feh --bg-fill ~/pictures/wp.jpg &
+xmobar &
 dwmblocks &
