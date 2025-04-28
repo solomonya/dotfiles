@@ -21,7 +21,7 @@ vim.cmd("let g:sneak#label = 1")
 vim.cmd("highlight Normal ctermbg=Black")
 vim.cmd("set background=dark")
 vim.cmd("filetype plugin on")
-vim.cmd("set colorcolumn=80")
+vim.cmd("set colorcolumn=120")
 -- vim.cmd('highlight ColorColumn ctermbg=DarkGray')
 -- vim.cmd('set colorcolumn=80')
 
