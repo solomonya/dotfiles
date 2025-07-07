@@ -17,7 +17,7 @@ return {
 			desc = "LSP Actions",
 			callback = function()
 				local bufmap = function(mode, lhs, rhs)
-					local opts = { buffer = true }
+					local opts = { buffer = true, silent = true, noremap = true }
 					vim.keymap.set(mode, lhs, rhs, opts)
 				end
 
@@ -31,10 +31,10 @@ return {
 				bufmap("n", "<leader>rn", vim.lsp.buf.rename) -- smart rename
 				bufmap("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>") -- show  diagnostics for file
 				bufmap("n", "<leader>d", vim.diagnostic.open_float) -- show diagnostics for line
-				bufmap("n", "[d", vim.diagnostic.goto_prev) -- jump to previous diagnostic in buffer
-				bufmap("n", "]d", vim.diagnostic.goto_next) -- jump to next diagnostic in buffer
 				bufmap("n", "K", vim.lsp.buf.hover) -- show documentation for what is under cursor
+				bufmap("n", "<leader>ss", "<cmd>lua vim.lsp.buf.document_symbol()<CR>")
 				bufmap("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
+				bufmap("n", "<leader>ld", "<cmd>lua vim.lsp.buf.definition()<CR>") -- mapping to restart lsp if necessary
 			end,
 		})
 
@@ -49,13 +49,9 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
-		lspconfig["pyright"].setup({
+		lspconfig["ts_ls"].setup({
 			capabilities = capabilities,
 		})
-
-        lspconfig["ts_ls"].setup({
-            capabilities = capabilities,
-        })
 
 		-- configure lua server (with special settings)
 		lspconfig["lua_ls"].setup({
