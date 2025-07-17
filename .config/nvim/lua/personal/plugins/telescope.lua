@@ -4,6 +4,9 @@ return {
 	dependencies = { "nvim-lua/plenary.nvim", { "nvim-telescope/telescope-fzf-native.nvim", build = "make" } },
 	config = function()
 		require("telescope").setup({
+			defaults = {
+				layout_strategy = "current_buffer",
+			},
 			pickers = {
 				find_files = {
 					theme = "ivy",
@@ -16,6 +19,7 @@ return {
 				fzf = {},
 			},
 		})
+
 		require("telescope").load_extension("fzf")
 		local builtin = require("telescope.builtin")
 
