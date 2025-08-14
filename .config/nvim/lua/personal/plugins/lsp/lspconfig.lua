@@ -49,13 +49,16 @@ return {
 					[vim.diagnostic.severity.HINT] = "H",
 				},
 			},
-			virtual_text = true,
+			virtual_text = false,
 			underline = true,
 			update_in_insert = false,
 			severity_sort = true,
 		})
 
 		lspconfig["ts_ls"].setup({
+			capabilities = capabilities,
+		})
+		lspconfig["pyright"].setup({
 			capabilities = capabilities,
 		})
 
