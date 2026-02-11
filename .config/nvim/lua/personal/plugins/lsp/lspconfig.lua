@@ -7,39 +7,38 @@ return {
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 	},
 	config = function()
-		-- import lspconfig plugin
-		local lspconfig = require("lspconfig")
+		-- cmp capabilities
+		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-		-- import cmp-nvim-lsp plugin
-		local cmp_nvim_lsp = require("cmp_nvim_lsp")
-
+		-- LSP keymaps
 		vim.api.nvim_create_autocmd("LspAttach", {
 			desc = "LSP Actions",
 			callback = function()
 				local bufmap = function(mode, lhs, rhs)
-					local opts = { buffer = true, silent = true, noremap = true }
-					vim.keymap.set(mode, lhs, rhs, opts)
+					vim.keymap.set(mode, lhs, rhs, {
+						buffer = true,
+						silent = true,
+						noremap = true,
+					})
 				end
 
-				-- set keybinds
-				bufmap("n", "gR", "<cmd>Telescope lsp_references<CR>") -- show definition, references
-				bufmap("n", "gD", vim.lsp.buf.declaration) -- go to declaration
-				bufmap("n", "gd", "<cmd>Telescope lsp_definitions<CR>") -- show lsp definitions
-				bufmap("n", "gi", "<cmd>Telescope lsp_implementations<CR>") -- show lsp implementations
-				bufmap("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>") -- show lsp type definitions
-				bufmap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action) -- see available code actions, in visual mode will apply to selection
-				bufmap("n", "<leader>rn", vim.lsp.buf.rename) -- smart rename
-				bufmap("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>") -- show  diagnostics for file
-				bufmap("n", "<leader>d", vim.diagnostic.open_float) -- show diagnostics for line
-				bufmap("n", "K", vim.lsp.buf.hover) -- show documentation for what is under cursor
-				bufmap("n", "<leader>ss", "<cmd>lua vim.lsp.buf.document_symbol()<CR>")
-				bufmap("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
-				bufmap("n", "<leader>ld", "<cmd>lua vim.lsp.buf.definition()<CR>") -- mapping to restart lsp if necessary
+				bufmap("n", "gR", "<cmd>Telescope lsp_references<CR>")
+				bufmap("n", "gD", vim.lsp.buf.declaration)
+				bufmap("n", "gd", "<cmd>Telescope lsp_definitions<CR>")
+				bufmap("n", "gi", "<cmd>Telescope lsp_implementations<CR>")
+				bufmap("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>")
+				bufmap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action)
+				bufmap("n", "<leader>rn", vim.lsp.buf.rename)
+				bufmap("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>")
+				bufmap("n", "<leader>d", vim.diagnostic.open_float)
+				bufmap("n", "K", vim.lsp.buf.hover)
+				bufmap("n", "<leader>ss", vim.lsp.buf.document_symbol)
+				bufmap("n", "<leader>rs", "<cmd>LspRestart<CR>")
+				bufmap("n", "<leader>ld", vim.lsp.buf.definition)
 			end,
 		})
 
-		local capabilities = cmp_nvim_lsp.default_capabilities()
-
+		-- Diagnostics
 		vim.diagnostic.config({
 			signs = {
 				text = {
@@ -55,24 +54,26 @@ return {
 			severity_sort = true,
 		})
 
-		lspconfig["ts_ls"].setup({
-			capabilities = capabilities,
-		})
-		lspconfig["pyright"].setup({
+		-- ======================
+		-- LSP SERVER CONFIGS
+		-- ======================
+
+		vim.lsp.config("ts_ls", {
 			capabilities = capabilities,
 		})
 
-		-- configure lua server (with special settings)
-		lspconfig["lua_ls"].setup({
+		vim.lsp.config("pyright", {
 			capabilities = capabilities,
-			settings = { -- custom settings for lua
+		})
+
+		vim.lsp.config("lua_ls", {
+			capabilities = capabilities,
+			settings = {
 				Lua = {
-					-- make the language server recognize "vim" global
 					diagnostics = {
 						globals = { "vim" },
 					},
 					workspace = {
-						-- make language server aware of runtime files
 						library = {
 							[vim.fn.expand("$VIMRUNTIME/lua")] = true,
 							[vim.fn.stdpath("config") .. "/lua"] = true,
@@ -81,5 +82,13 @@ return {
 				},
 			},
 		})
+
+		-- ======================
+		-- ENABLE SERVERS
+		-- ======================
+
+		vim.lsp.enable("ts_ls")
+		vim.lsp.enable("pyright")
+		vim.lsp.enable("lua_ls")
 	end,
 }

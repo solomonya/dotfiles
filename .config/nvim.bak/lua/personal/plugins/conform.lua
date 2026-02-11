@@ -3,14 +3,15 @@ return {
 	opts = {},
 	config = function()
 		local conform = require("conform")
-		local javascript_settings = { "biome", "prettierd", "prettier", stop_after_first = true }
 		conform.setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
-				javascript = javascript_settings,
-				typescript = javascript_settings,
-				javascriptreact = javascript_settings,
-				typescriptreact = javascript_settings,
+				python = { "isort", "black" },
+				javascript = { "prettierd", "prettier", stop_after_first = true },
+				typescript = { "prettierd", "prettier", stop_after_first = true },
+				javascriptreact = { "prettierd", "prettier", stop_after_first = true },
+				typescriptreact = { "prettierd", "prettier", stop_after_first = true },
+				python = { "ruff", stop_after_first = true },
 			},
 			notify_on_error = true,
 		})
