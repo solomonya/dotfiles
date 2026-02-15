@@ -4,7 +4,6 @@ return {
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/nvim-cmp",
-		{ "antosha417/nvim-lsp-file-operations", config = true },
 	},
 	config = function()
 		-- cmp capabilities
@@ -22,19 +21,14 @@ return {
 					})
 				end
 
-				bufmap("n", "gR", "<cmd>Telescope lsp_references<CR>")
-				bufmap("n", "gD", vim.lsp.buf.declaration)
-				bufmap("n", "gd", "<cmd>Telescope lsp_definitions<CR>")
-				bufmap("n", "gi", "<cmd>Telescope lsp_implementations<CR>")
-				bufmap("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>")
 				bufmap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action)
 				bufmap("n", "<leader>rn", vim.lsp.buf.rename)
-				bufmap("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>")
 				bufmap("n", "<leader>d", vim.diagnostic.open_float)
 				bufmap("n", "K", vim.lsp.buf.hover)
 				bufmap("n", "<leader>ss", vim.lsp.buf.document_symbol)
 				bufmap("n", "<leader>rs", "<cmd>LspRestart<CR>")
 				bufmap("n", "<leader>ld", vim.lsp.buf.definition)
+				vim.keymap.set("n", "gd", vim.lsp.buf.definition, { noremap = true, silent = true, buffer = 0 })
 			end,
 		})
 
