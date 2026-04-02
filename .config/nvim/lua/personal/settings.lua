@@ -7,7 +7,7 @@ vim.cmd("let g:sneak#label = 1")
 vim.cmd("highlight Normal ctermbg=Black")
 vim.cmd("set background=dark")
 vim.cmd("filetype plugin on")
-vim.cmd("set colorcolumn=80")
+vim.cmd("set colorcolumn=75")
 vim.cmd("set ignorecase")
 vim.cmd("set smartcase")
 -- vim.cmd('highlight ColorColumn ctermbg=DarkGray')
@@ -24,3 +24,10 @@ vim.opt.foldlevelstart = 99
 
 vim.diagnostic.config({ virtual_text = false })
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
+
+-- indenting by tab
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+

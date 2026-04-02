@@ -68,9 +68,9 @@ function M.toggle_task()
 		vim.api.nvim_buf_set_lines(0, row, row + 1, false, {})
 
 		-- find insertion point
-		local insert_at = last_non_empty_line()
+		-- local insert_at = last_non_empty_line()
 
-		vim.api.nvim_buf_set_lines(0, insert_at, insert_at + 1, false, { done_line })
+		vim.api.nvim_buf_set_lines(0, row, row, false, { done_line })
 
 		return
 	end

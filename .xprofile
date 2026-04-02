@@ -1,3 +1,1 @@
-setxkbmap -model pc105 -layout us,ru -option grp:toggle
-feh --bg-fill ~/train_wall.png &
 
