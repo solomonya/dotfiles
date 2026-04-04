@@ -2,16 +2,18 @@ vim.wo.relativenumber = true
 vim.g.netrw_banner = 0
 
 vim.cmd("set number")
-vim.cmd("colorscheme habamax")
+-- vim.cmd("colorscheme habamax")
 vim.cmd("let g:sneak#label = 1")
 vim.cmd("highlight Normal ctermbg=Black")
 vim.cmd("set background=dark")
 vim.cmd("filetype plugin on")
-vim.cmd("set colorcolumn=75")
+vim.cmd("set colorcolumn=76")
 vim.cmd("set ignorecase")
 vim.cmd("set smartcase")
 -- vim.cmd('highlight ColorColumn ctermbg=DarkGray')
 -- vim.cmd('set colorcolumn=80')
+
+vim.opt.textwidth = 75
 
 -- folding
 vim.opt.foldmethod = "expr"
@@ -30,4 +32,3 @@ vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
-
