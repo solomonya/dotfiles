@@ -111,4 +111,4 @@ for _, group in ipairs(groups) do
 	vim.api.nvim_set_hl(0, group, { fg = "#c0c0c0", bg = "#000000", ctermfg = "gray", ctermbg = "black" })
 end
 
-vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#c0c0c0", ctermbg = "darkgray" })
+vim.api.nvim_set_hl(0, "ColorColumn", { bg = "gray", ctermbg = "darkgray" })

@@ -45,6 +45,3 @@ map("v", "<Up>", "<NOP>", opts)
 map("v", "<Down>", "<NOP>", opts)
 map("v", "<Left>", "<NOP>", opts)
 map("v", "<Right>", "<NOP>", opts)
-
-vim.keymap.set("n", "<leader>tt", "<cmd>TaskToggle<CR>", { desc = "Toggle task" })
-vim.keymap.set("n", "<leader>tn", "<cmd>TaskCreate<CR>", { desc = "New task" })

@@ -5,18 +5,6 @@ local function timestamp()
 	return os.date("%Y-%m-%d %H:%M")
 end
 
-local function last_non_empty_line()
-	local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
-
-	for i = #lines, 1, -1 do
-		if lines[i]:match("%S") then
-			return i
-		end
-	end
-
-	return 0
-end
-
 local function archive_path()
 	local current = vim.api.nvim_buf_get_name(0)
 	if current == "" then
