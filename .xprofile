@@ -1,1 +1,4 @@
+polybar&
+feh --bg-fill ~/pictures/anime_landscape.jpg&
+setxkbmap -layout us,ru -option ctrl:nocaps -option grp:toggle
 

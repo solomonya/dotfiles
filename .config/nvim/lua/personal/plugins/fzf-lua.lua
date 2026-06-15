@@ -12,5 +12,6 @@ return {
 		vim.keymap.set("n", "<leader>fb", fzf_lua.buffers)
 		vim.keymap.set("n", "<leader>fg", fzf_lua.live_grep)
 		vim.keymap.set("n", "<leader>fr", fzf_lua.resume)
+		vim.keymap.set("n", "<leader>D", fzf_lua.lsp_document_diagnostics)
 	end,
 }

@@ -6,6 +6,9 @@ vim.cmd("let g:sneak#label = 1")
 vim.cmd("highlight Normal ctermbg=Black")
 vim.cmd("set background=dark")
 vim.cmd("filetype plugin on")
+-- vim.cmd("colorscheme habamax")
+--
+vim.cmd.colorscheme("minimal_alabaster")
 
 -- color column settings
 local colorcolumn_group = vim.api.nvim_create_augroup("CustomColorColumn", { clear = true })
@@ -40,9 +43,3 @@ vim.opt.foldlevelstart = 99
 
 vim.diagnostic.config({ virtual_text = false })
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
-
--- indenting by tab
-vim.opt.expandtab = true
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4

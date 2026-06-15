@@ -49,6 +49,7 @@ return {
 				typescript = javascript_settings,
 				javascriptreact = javascript_settings,
 				typescriptreact = javascript_settings,
+				json = javascript_settings,
 			},
 			notify_on_error = true,
 		})
