@@ -7,30 +7,13 @@ vim.cmd("highlight Normal ctermbg=Black")
 vim.cmd("set background=dark")
 vim.cmd("filetype plugin on")
 -- vim.cmd("colorscheme habamax")
---
+
 vim.cmd.colorscheme("minimal_alabaster")
-
--- color column settings
-local colorcolumn_group = vim.api.nvim_create_augroup("CustomColorColumn", { clear = true })
-
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-	group = colorcolumn_group,
-	pattern = "*", -- Срабатывает для всех файлов
-	callback = function(args)
-		local filename = vim.api.nvim_buf_get_name(args.buf)
-
-		if string.find(filename, "tasks%.txt") then
-			vim.opt_local.colorcolumn = ""
-		else
-			vim.opt_local.colorcolumn = "76"
-		end
-	end,
-})
-
+vim.opt_local.colorcolumn = ""
 vim.cmd("set ignorecase")
 vim.cmd("set smartcase")
 
-vim.opt.textwidth = 75
+-- vim.opt.textwidth = 75
 
 -- folding
 vim.opt.foldmethod = "expr"
