@@ -1,4 +1,3 @@
 require("personal.remap")
 require("personal.lazy")
-require("personal.tasks")
 require("personal.settings")

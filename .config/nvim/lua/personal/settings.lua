@@ -8,7 +8,7 @@ vim.cmd("set background=dark")
 vim.cmd("filetype plugin on")
 -- vim.cmd("colorscheme habamax")
 
-vim.cmd.colorscheme("minimal_alabaster")
+vim.cmd.colorscheme("alabaster_light")
 vim.opt_local.colorcolumn = ""
 vim.cmd("set ignorecase")
 vim.cmd("set smartcase")

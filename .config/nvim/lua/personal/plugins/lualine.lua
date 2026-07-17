@@ -4,7 +4,7 @@ return {
 		require("lualine").setup({
 			options = {
 				icons_enabled = false,
-				theme = "ayu_dark",
+				theme = "ayu_light",
 			},
 		})
 	end,
