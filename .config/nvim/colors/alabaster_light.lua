@@ -159,4 +159,6 @@ hl("@lsp.type.enum", { fg = p.global })
 
 -- UI Elements
 hl("Directory", { fg = p.fg })
+hl("NormalFloat", { fg = p.fg, bg = "#F0F0F0" })
+hl("FloatBorder", { fg = "#CCCCCC", bg = "#F0F0F0" })
 
