@@ -1,23 +1,41 @@
--- ~/.config/nvim/colors/minimal_alabaster.lua
-
 vim.cmd("highlight clear")
 
 if vim.fn.exists("syntax_on") then
 	vim.cmd("syntax reset")
 end
 
-vim.g.colors_name = "minimal_alabaster"
+vim.g.colors_name = "alabaster_dark"
 vim.o.background = "dark"
 vim.o.termguicolors = true
 
 local p = {
 	bg = "#000000",
+	bg_alt = "#0a0a0a",
 	fg = "#bcbcbc",
+	fg_dim = "#8a8a8a",
+	fg_bright = "#e4e4e4",
 	comment = "#af5f00",
 	string = "#7aa89f",
 	constant = "#8aa6c1",
 	global = "#9fb7d5",
 	accent = "#5f8787",
+	line_nr = "#5a5a5a",
+	line_nr_cur = "#d0d0d0",
+	cursor_line = "#1c1c1c",
+	selection = "#2c3b4d",
+	search = "#4d3d1f",
+	search_fg = "#e4c078",
+	pmenu_bg = "#1a1a1a",
+	pmenu_sel = "#2a2a2a",
+	statusline_bg = "#1a1a1a",
+	statusline_fg = "#8a8a8a",
+	statusline_nc_bg = "#0f0f0f",
+	statusline_nc_fg = "#4a4a4a",
+	split = "#2a2a2a",
+	nontext = "#3a3a3a",
+	whitespace = "#2a2a2a",
+	err = "#b05050",
+	warn = "#af8700",
 	none = "NONE",
 }
 
@@ -39,28 +57,28 @@ hl("Normal", { fg = p.fg, bg = p.bg })
 hl("NormalNC", { fg = p.fg, bg = p.bg })
 hl("SignColumn", { fg = p.fg, bg = p.bg })
 hl("EndOfBuffer", { fg = p.bg, bg = p.bg })
-hl("NonText", { fg = "#555555" })
-hl("Whitespace", { fg = "#333333" })
+hl("NonText", { fg = p.nontext })
+hl("Whitespace", { fg = p.whitespace })
 
-hl("Cursor", { fg = p.bg, bg = p.fg })
-hl("CursorLine", { bg = "#080808" })
-hl("CursorLineNr", { fg = p.accent, bg = p.bg })
-hl("LineNr", { fg = "#444444", bg = p.bg })
+hl("Cursor", { fg = p.bg, bg = p.accent })
+hl("CursorLine", { bg = p.cursor_line })
+hl("CursorLineNr", { fg = p.line_nr_cur, bg = p.bg })
+hl("LineNr", { fg = p.line_nr, bg = p.bg })
 
-hl("Visual", { bg = "#1c1c1c" })
-hl("Search", { fg = p.bg, bg = p.accent })
-hl("IncSearch", { fg = p.bg, bg = p.accent })
+hl("Visual", { bg = p.selection })
+hl("Search", { fg = p.search_fg, bg = p.search })
+hl("IncSearch", { fg = p.search_fg, bg = p.search })
 
-hl("Pmenu", { fg = p.fg, bg = "#080808" })
-hl("PmenuSel", { fg = p.bg, bg = p.accent })
-hl("StatusLine", { fg = p.fg, bg = "#111111" })
-hl("StatusLineNC", { fg = "#666666", bg = "#080808" })
+hl("Pmenu", { fg = p.fg, bg = p.pmenu_bg })
+hl("PmenuSel", { fg = p.fg_bright, bg = p.pmenu_sel })
+hl("StatusLine", { fg = p.statusline_fg, bg = p.statusline_bg })
+hl("StatusLineNC", { fg = p.statusline_nc_fg, bg = p.statusline_nc_bg })
 
-hl("VertSplit", { fg = "#222222", bg = p.bg })
-hl("WinSeparator", { fg = "#222222", bg = p.bg })
+hl("VertSplit", { fg = p.split, bg = p.bg })
+hl("WinSeparator", { fg = p.split, bg = p.bg })
 
-hl("DiagnosticError", { fg = p.accent })
-hl("DiagnosticWarn", { fg = p.accent })
+hl("DiagnosticError", { fg = p.err })
+hl("DiagnosticWarn", { fg = p.warn })
 hl("DiagnosticInfo", { fg = p.accent })
 hl("DiagnosticHint", { fg = p.accent })
 
@@ -156,3 +174,8 @@ hl("@lsp.type.method", { fg = p.fg })
 hl("@lsp.type.class", { fg = p.global })
 hl("@lsp.type.interface", { fg = p.global })
 hl("@lsp.type.enum", { fg = p.global })
+
+-- UI Elements
+hl("Directory", { fg = p.fg })
+hl("NormalFloat", { fg = p.fg, bg = p.bg_alt })
+hl("FloatBorder", { fg = p.split, bg = p.bg_alt })
