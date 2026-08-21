@@ -26,7 +26,6 @@ return {
 				bufmap("n", "<leader>d", vim.diagnostic.open_float)
 				bufmap("n", "K", vim.lsp.buf.hover)
 				bufmap("n", "<leader>ss", vim.lsp.buf.document_symbol)
-				bufmap("n", "<leader>rs", "<cmd>LspRestart<CR>")
 				bufmap("n", "<leader>ld", vim.lsp.buf.definition)
 				vim.keymap.set("n", "gd", vim.lsp.buf.definition, { noremap = true, silent = true, buffer = 0 })
 			end,
@@ -60,6 +59,10 @@ return {
 			capabilities = capabilities,
 		})
 
+		vim.lsp.config("clojure_lsp", {
+			capabilities = capabilities,
+		})
+
 		vim.lsp.config("lua_ls", {
 			capabilities = capabilities,
 			settings = {
@@ -81,8 +84,16 @@ return {
 		-- ENABLE SERVERS
 		-- ======================
 
-		vim.lsp.enable("ts_ls")
-		vim.lsp.enable("pyright")
+		local profile = require("personal").profile
+
+		if profile == "ts" then
+			vim.lsp.enable("ts_ls")
+		elseif profile == "py" then
+			vim.lsp.enable("pyright")
+		elseif profile == "clj" then
+			vim.lsp.enable("clojure_lsp")
+		end
+
 		vim.lsp.enable("lua_ls")
 	end,
 }

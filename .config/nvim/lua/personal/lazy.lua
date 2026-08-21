@@ -14,13 +14,23 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("personal.plugins")
+local profile = require("personal").profile
 
-require("lazy").setup({
+local imports = {
 	{ import = "personal.plugins" },
-	{ import = "personal.plugins.lsp" }
-}, {
-  enabled = true,
-  notify = false
+	{ import = "personal.plugins.lsp" },
+}
+
+if profile == "ts" then
+	table.insert(imports, { import = "personal.plugins.profiles.ts" })
+elseif profile == "clj" then
+	table.insert(imports, { import = "personal.plugins.profiles.clj" })
+elseif profile == "py" then
+	table.insert(imports, { import = "personal.plugins.profiles.py" })
+end
+
+require("lazy").setup(imports, {
+	enabled = true,
+	notify = false,
 })
 

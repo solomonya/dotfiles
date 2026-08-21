@@ -1,3 +1,4 @@
-require("personal.remap")
-require("personal.lazy")
-require("personal.settings")
+local M = {}
+M.profile = os.getenv("NVIM_PROFILE") or "common"
+
+return M

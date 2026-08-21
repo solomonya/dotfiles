@@ -2,6 +2,8 @@ return {
 	"stevearc/conform.nvim",
 	opts = {},
 	config = function()
+		local profile = require("personal").profile
+
 		local conform = require("conform")
 
 		-- Helper function to find prettier config files
@@ -22,7 +24,21 @@ return {
 			return local_config
 		end
 
-		local javascript_settings = { "biome", "prettierd", "prettier", stop_after_first = true }
+		local javascript_settings = { "biome", "prettierd", stop_after_first = true }
+
+		local formatters_by_ft = {
+			lua = { "stylua" },
+		}
+
+		if profile == "ts" then
+			formatters_by_ft.javascript = javascript_settings
+			formatters_by_ft.typescript = javascript_settings
+			formatters_by_ft.javascriptreact = javascript_settings
+			formatters_by_ft.typescriptreact = javascript_settings
+			formatters_by_ft.json = javascript_settings
+		elseif profile == "py" then
+			formatters_by_ft.python = { "ruff_format" }
+		end
 
 		conform.setup({
 			-- Define custom conditions for formatters here
@@ -32,25 +48,14 @@ return {
 						return vim.fs.find({ "biome.json", "biome.jsonc" }, { path = ctx.filename, upward = true })[1]
 					end,
 				},
-				prettier = {
-					condition = function(self, ctx)
-						return has_prettier_config(ctx)
-					end,
-				},
+
 				prettierd = {
 					condition = function(self, ctx)
 						return has_prettier_config(ctx)
 					end,
 				},
 			},
-			formatters_by_ft = {
-				lua = { "stylua" },
-				javascript = javascript_settings,
-				typescript = javascript_settings,
-				javascriptreact = javascript_settings,
-				typescriptreact = javascript_settings,
-				json = javascript_settings,
-			},
+			formatters_by_ft = formatters_by_ft,
 			notify_on_error = true,
 		})
 

@@ -106,3 +106,8 @@ eval "$(mise activate zsh)"
 
 # opencode
 export PATH=/home/slmn/.opencode/bin:$PATH
+
+# neovim profiles
+alias nvim-ts='NVIM_PROFILE=ts nvim'
+alias nvim-clj='NVIM_PROFILE=clj nvim'
+alias nvim-py='NVIM_PROFILE=py nvim'
