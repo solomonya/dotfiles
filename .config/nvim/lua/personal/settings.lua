@@ -15,6 +15,12 @@ vim.cmd("set smartcase")
 
 -- vim.opt.textwidth = 75
 
+-- TAB WIDTH
+vim.opt.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+
 -- folding
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"

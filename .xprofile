@@ -1,5 +1,5 @@
+feh --bg-fill "$(find ~/background_images -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' \) | shuf -n1)"
 polybar&
-feh --bg-fill ~/pictures/anime_landscape.jpg&
 setxkbmap -layout us,ru -option ctrl:nocaps -option grp:toggle
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_DATA_DIRS="$HOME/.local/share:/usr/local/share:/usr/share"
