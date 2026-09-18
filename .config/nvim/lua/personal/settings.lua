@@ -32,3 +32,5 @@ vim.opt.foldlevelstart = 99
 
 vim.diagnostic.config({ virtual_text = false })
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
+vim.opt.grepprg = "rg --vimgrep --smart-case"
+

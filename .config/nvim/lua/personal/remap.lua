@@ -46,3 +46,5 @@ map("v", "<Up>", "<NOP>", opts)
 map("v", "<Down>", "<NOP>", opts)
 map("v", "<Left>", "<NOP>", opts)
 map("v", "<Right>", "<NOP>", opts)
+
+map("n", "<leader>q", ":copen<CR>", opts)
